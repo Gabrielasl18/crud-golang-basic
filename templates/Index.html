@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Usuários cadastrados</title>
+</head>
+
+<body>
+    <!-- Header -->
+    {{ template "Header.html" }}
+    <!-- Menu -->
+    {{ template "Menu.html" }}
+
+    <h2>Usuários cadastrados</h2>
+    <table>
+        <thead>
+            <tr>
+                <td>Id</td>
+                <td>Nome</td>
+                <td>Email</td>
+                <td>Ação</td>
+            </tr>
+        </thead>
+        <tbody>
+            {{ range . }}
+            <tr>
+                <td>{{ .Id }}</td>
+                <td>{{ .Name }}</td>
+                <td>{{ .Email }}</td>
+                <td><a href="/show?id={{ .Id }}">Visualizar</a> | <a href="/edit?id={{ .Id }}">Editar</a></td>
+            </tr>
+            {{ end }}
+        </tbody>
+    </table>
+</body>
+
+</html>

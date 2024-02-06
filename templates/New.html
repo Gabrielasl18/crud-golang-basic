@@ -1,0 +1,13 @@
+<!-- New.tmpl -->
+{{ template "Header.html" }}
+{{ template "Menu.html" }}
+
+<h2>Novo nome e e-mail</h2>
+
+<form method="POST" action="insert">
+    <label> Nome </label><input type="text" name="name" /><br/>
+    <label> E-mail </label><input type="text" name="email" /><br/>
+    <input type="submit" value="Save user" />
+</form>
+
+{{ template "Footer.html" }}
